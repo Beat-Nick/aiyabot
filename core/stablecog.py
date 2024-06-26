@@ -691,7 +691,7 @@ class StableCog(commands.Cog, name='Stable Diffusion', description='Create image
 
             noun_descriptor = "drawing" if image_count == 1 else f'{image_count} drawings'
             draw_time = '{0:.3f}'.format(end_time - start_time)
-            message = f'my {noun_descriptor} of ``{queue_object.simple_prompt}`` took me ``{draw_time}`` seconds!'
+            message = f'Processing took me ``{draw_time}`` seconds!'
 
             view = queue_object.view
 
@@ -728,12 +728,9 @@ class StableCog(commands.Cog, name='Stable Diffusion', description='Create image
                         filename = f'SPOILER_{queue_object.seed}-{count}.png'
                     file = add_metadata_to_image(grid, images[current_grid * 25][2], filename)
                     if current_grid == 0:
-                        content = f'<@{user_id}>, {message}\n ' \
-                                  f'Batch ID: {epoch_time}-{queue_object.seed}\n Image IDs: {id_start}-{id_end}'
+                        content = ''
                     else:
-                        content = f'> for {user_id}, ' \
-                                  f'use /info or context menu to retrieve.\n ' \
-                                  f'Batch ID: {epoch_time}-{queue_object.seed}\n Image IDs: {id_start}-{id_end}'
+                        content = ''
                         view = None
 
                     current_grid += 1
