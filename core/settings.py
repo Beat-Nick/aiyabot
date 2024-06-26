@@ -125,7 +125,7 @@ class GlobalVar:
     save_outputs = "True"
     queue_limit = 1
     batch_buttons = "False"
-    restrict_buttons = "True"
+    restrict_buttons = "False"
     quick_upscale_resize = 2.0
     prompt_ban_list = []
     prompt_ignore_list = []
